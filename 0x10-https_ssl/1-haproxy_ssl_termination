@@ -43,12 +43,12 @@ frontend http
         default_backend web-backend
 
 frontend www-https
-        bind *:443 ssl crt /etc/haproxy/ssl/www.luisch.tech.pem
+        bind *:443 ssl crt /etc/haproxy/ssl/www.bisratshiferaw.tech.pem
         http-request set-header X-Forwarded-Proto https
         default_backend web-backend
 
 backend web-backend
         balance roundrobin
         redirect scheme https if !{ ssl_fc }
-        server 76667-web-01 34.202.233.71:80 check
-        server 76667-web-02 18.206.232.176:80 check
+        server 76667-web-01 18.210.15.16:80 check
+        server 76667-web-02 54.237.46.87:80 check
